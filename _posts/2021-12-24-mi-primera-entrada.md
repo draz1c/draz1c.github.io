@@ -1,10 +1,11 @@
 ---
 layout: post
 tags: tutorial jekyll
-title:  "tutorial bAsico"
-author: "draz1c"
-categories: "tutorial-basico"
-permalink: /:year/:month/:day/:categories/
+title: tutorial basico
+author: draz1c
+categories: tutorial-basico
+permalink: '/:year/:month/:day/:categories/'
+published: true
 ---
 
 # Features
