@@ -9,8 +9,8 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-website: 
-github_username:  draz1c
+website:
+github_username: draz1c
 # bitbucket_username: draz1c
 # codepen_username: draz1c
 # linkedin_username: draz1c
@@ -20,7 +20,6 @@ twitter_username: draz1c
 # keybase_username: draz1c
 # paypal_username: draz1c
 # stackoverflow_username: draz1c # (developer story)
-
 
 collections:
   - setup
@@ -40,18 +39,17 @@ paginate_path: "/page:num/"
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
 header_pages:
-#  - _pages/blog.md
+  #  - _pages/blog.md
   - _pages/about.md
   - _pages/contacto.md
   - _pages/setup.md
- # - _pages/github.md
+  # - _pages/github.md
 
- 
 prose:
-  rooturl: '_posts'
-  siteurl: 'https://draz1c.github.io'
-  relativeLinks: 'https://draz1c.github.io/links.jsonp'
-  media: 'media'
+  rooturl: "_posts"
+  siteurl: "https://draz1c.github.io"
+  relativeLinks: "https://draz1c.github.io/links.jsonp"
+  media: "media"
   ignore:
     - index.md
     - _config.yml
@@ -59,7 +57,7 @@ prose:
     - /_includes
   metadata:
     _posts:
-- name: "published"
+      - name: "published"
         field:
           label: "Published"
           element: "checkbox"
@@ -144,7 +142,7 @@ prose:
           element: "text"
           label: "Permalink"
           value: ""
-          
+
 plugins:
   - jekyll-feed
   - jekyll-gist
