@@ -3,9 +3,13 @@ layout: post
 tags: tutorial jekyll
 title: tutorial basico
 author: draz1c
-categories: tutorial-basico
+categories:
+  - tutorial-basico
 permalink: '/:year/:month/:day/:categories/'
-published: true
+published: false
+mathjax: false
+featured: false
+comments: false
 ---
 
 # Features
