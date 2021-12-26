@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: offtopic
-title: "Geeting used to blogging"
+title: "Geting used to blogging"
 author: draz1c
 categories: getting-used-to-blogging
 permalink: '/:year/:month/:day/:categories/'
