@@ -1,6 +1,6 @@
-title: Minimaless Demo
-author: GitHub User
-email: your-email@domain.com
+title: draz1c Blog & Personal Site
+author: draz1c
+email: b.draz1c88@gmail.com
 description: >
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -14,7 +14,7 @@ github_username: draz1c
 # bitbucket_username: draz1c
 # codepen_username: draz1c
 # linkedin_username: draz1c
-twitter_username: draz1c
+# twitter_username: draz1c
 # facebook_username: draz1c
 # instagram_username: draz1c
 # keybase_username: draz1c
@@ -42,8 +42,8 @@ header_pages:
   #  - _pages/blog.md
   - _pages/about.md
   - _pages/contacto.md
-  - _pages/setup.md
-  # - _pages/github.md
+#  - _pages/setup.md
+  - _pages/github.md
 
 prose:
   rooturl: "_posts"
@@ -55,93 +55,93 @@ prose:
     - _config.yml
     - /_layouts
     - /_includes
-  metadata:
-    _posts:
-      - name: "published"
-        field:
-          label: "Published"
-          element: "checkbox"
-          value: "true"
-      - name: "layout"
-        field:
-          element: "hidden"
-          label: "Layout"
-          value: "post"
-      - name: "title"
-        field:
-          label: "Title"
-          element: "text"
-          value: "An Awesome Headline!"
-      - name: "description"
-        field:
-          element: "text"
-          label: "Description"
-          placeholder: "Enter Post Description"
-      - name: "headline"
-        field:
-          element: "text"
-          label: "beadline"
-          placeholder: "Enter Post Headline"
-      - name: "modified"
-        field:
-          element: "text"
-          label: "Has this page been modified?"
-          placeholder: "YYYY-MM-DD"
-      - name: "categories"
-        field:
-          element: "multiselect"
-          label: "Add categories"
-          placeholder: "Choose categories"
-          value: personal
-          options:
-            - name: "Personal"
-              value: personal
-            - name: "Engineering"
-              value: engineering
-            - name: "Physics"
-              value: physics
-            - name: "Psychology"
-              value: psychology
-            - name: "Interesting"
-              value: interesting
-            - name: "Web-Development"
-              value: webdevelopment
-          alterable: true
-      - name: "tags"
-        field:
-          element: "text"
-          label: "Tags"
-          placeholder: "Enter tags, separated by spaces"
-      - name: "imagefeature"
-        field:
-          element: "text"
-          label: "Featured Image"
-          placeholder: "somefile.jpg"
-      - name: "mathjax"
-        field:
-          element: "checkbox"
-          label: "MathJax"
-          value: false
-      - name: "featured"
-        field:
-          element: "checkbox"
-          label: "Featured?"
-          value: false
-      - name: "comments"
-        field:
-          element: "checkbox"
-          label: "Comments"
-          value: false
-    _posts/static:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "page"
-      - name: "permalink"
-        field:
-          element: "text"
-          label: "Permalink"
-          value: ""
+  # metadata:
+    # _posts:
+      # - name: "published"
+        # field:
+          # label: "Published"
+          # element: "checkbox"
+          # value: "true"
+      # - name: "layout"
+        # field:
+          # element: "hidden"
+          # label: "Layout"
+          # value: "post"
+      # - name: "title"
+        # field:
+          # label: "Title"
+          # element: "text"
+          # value: "An Awesome Headline!"
+      # - name: "description"
+        # field:
+          # element: "text"
+          # label: "Description"
+          # placeholder: "Enter Post Description"
+      # - name: "headline"
+        # field:
+          # element: "text"
+          # label: "beadline"
+          # placeholder: "Enter Post Headline"
+      # - name: "modified"
+        # field:
+          # element: "text"
+          # label: "Has this page been modified?"
+          # placeholder: "YYYY-MM-DD"
+      # - name: "categories"
+        # field:
+          # element: "multiselect"
+          # label: "Add categories"
+          # placeholder: "Choose categories"
+          # value: personal
+          # options:
+            # - name: "Personal"
+              # value: personal
+            # - name: "Engineering"
+              # value: engineering
+            # - name: "Physics"
+              # value: physics
+            # - name: "Psychology"
+              # value: psychology
+            # - name: "Interesting"
+              # value: interesting
+            # - name: "Web-Development"
+              # value: webdevelopment
+          # alterable: true
+      # - name: "tags"
+        # field:
+          # element: "text"
+          # label: "Tags"
+          # placeholder: "Enter tags, separated by spaces"
+      # - name: "imagefeature"
+        # field:
+          # element: "text"
+          # label: "Featured Image"
+          # placeholder: "somefile.jpg"
+      # - name: "mathjax"
+        # field:
+          # element: "checkbox"
+          # label: "MathJax"
+          # value: false
+      # - name: "featured"
+        # field:
+          # element: "checkbox"
+          # label: "Featured?"
+          # value: false
+      # - name: "comments"
+        # field:
+          # element: "checkbox"
+          # label: "Comments"
+          # value: false
+    # _posts/static:
+      # - name: "layout"
+        # field:
+          # element: "hidden"
+          # value: "page"
+      # - name: "permalink"
+        # field:
+          # element: "text"
+          # label: "Permalink"
+          # value: ""
 
 plugins:
   - jekyll-feed

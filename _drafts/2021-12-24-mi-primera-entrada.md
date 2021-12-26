@@ -110,3 +110,5 @@ permalink: /tag/kittens/
 ```
 
 This must be done for every new tag you create. This is the page that users will see when they click on a tag. [View the tag page here]({{site.baseurl}}/tags/).
+
+{% include disqus.html %}
