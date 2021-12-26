@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About me
-permalink: /about/
+permalink: /about-me/
 ---
 
 Graduated in IT in the [University of Cantabria](https://web.unican.es/en/), Spain (2010 - 2016), I have since then worked for some of the most important companies in Spain ([Santander Bank](https://www.santander.com/en/), [Telefonica](https://www.telefonica.com/en/), etc...) and some Consulting companies as a Cyber Security Consultant as well as a SysAdmin. 
@@ -17,6 +17,3 @@ Some of the topics I'm interested in are:
 - > Log aggregation and field extraction from many different logs sources and log formats by developping complex parsers using Regular expressions (**regex**) with technologies such as [ArcSight](https://en.wikipedia.org/wiki/ArcSight) and [Splunk](https://en.wikipedia.org/wiki/Splunk).
 
 - > Linux & Unix administration, Hypervisor Virtualization (VMware ESXi, Xen, KVM), Docker, SIEM, etc...
-
-<br/>
-Visit this site's [blog]({{site.baseurl}}) or [resumé]({{site.baseurl}}/resume/) page.
