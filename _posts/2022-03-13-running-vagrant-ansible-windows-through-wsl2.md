@@ -10,10 +10,12 @@ published: true
 
 <center>
 
-  [![windows_vagrant_ansible_wsl.png](/assets/images/windows_vagrant_ansible_wsl.png)}
-  _*Windows 10 + Vagrant + WSL2 + Ansible*_
+<img src="{{ site.baseurl }}/images/windows_vagrant_ansible_wsl.png" />
+<center><small><em>Windows 10 + Vagrant + WSL2 + Ansible</em></small></center>
 </center>
 
+
+----
 So, wether you are setting your __homelab__ up for learning purposes, or your __homeserver__ if you have the more advanced knowledge, or even on __production__ in a company, you may want to automatize the process of creating, configuring and deleting __Virtual Machines__ (_*VM*_'s) for multiple purposes.
 #### What is Vagrant?
 You may use any of the most popular virtualization software out there like `VirtualBox`, `VMware`, `Hyper-V`, `KVM`, `AWS`, `Docker`, etc... but creating Virtual Machines the manual way can be a hustle and bustle as it usually requires to download an __ISO File__ for the target OS that you are goint to install into and then wait for the installation process which can __take a while to complete__. Once you have one Virtual Machine up and working most of these software programs allo you to replicate the configuration so that you can create multiple other machines in a matter of seconds.
@@ -38,8 +40,9 @@ sudo apt-get update && sudo apt-get install vagrant
 >In the [__downloads page__](https://www.vagrantup.com/downloads) you may find the commads needed for `yum`, `dnf` o `brew` if you are using CentOS/RHEL, Fedora or Homebrew respectively.
 <center>
   
-[![vagrant_downloads](/images/vagrant_downloads.png)
-  _*Image: Other installation methods.*_
+<img src="{{ site.baseurl }}/images/vagrant_downloads.png" />  
+<center><small><em>Image: Other installation methods.</em></small></center>
+
 </center>
 
 Once installation finishes make sure that the installed version matches with the one in Windows 10 (at the time of writing this article the last version of Vagrant is **2.2.19**):
@@ -108,17 +111,14 @@ You will have to disable vEthernet (WSL) for the three profiles `domain`, `priva
 
 <center>
   
-  [![firewall-1](/images/disable-firewall-1.png)
+  <img src="{{ site.baseurl }}/images/disable-firewall-1.png" />
+  <center><small><em>Go to firewall properties</em></small></center>
   
-  _*Go to firewall properties*_
+  <img src="{{ site.baseurl }}/images/disable-firewall-2.png" />
+  <center><small><em>For each of the three profiles click on customize</em></small></center>
   
-  [![firewall-2](/images/disable-firewall-2.png)
-  
-  _*For each of the three profiles click on customize*_
-  
-  [![firewall-3](/images/disable-firewall-3.png)
-  
-  _*Untick vEthernet (ESL)*_
+  <img src="{{ site.baseurl }}/images/disable-firewall-3.png" />
+  <center><small><em>Untick vEthernet (WSL)</em></small></center>
   
   </center>
   
@@ -144,9 +144,8 @@ Apparently it is easy to fix as pointed out __[here](https://stackoverflow.com/a
 
 <center>
   
-[![firewall-4](/images/firewall-4.png)
-  
-  _*Checking and uncheking this option and disabling and enabling the adapter seems to fix the problem.*_
+<img src="{{ site.baseurl }}/images/firewall-4.png" />
+ <center><small><em>Checking and uncheking this option and disabling and enabling the adapter seems to fix the problem.</em></small></center> 
   </center>
   
 There are other fixes that than be tried if none of the above does the trick, you can read more about them __[here](https://github.com/geerlingguy/ansible-for-devops/issues/291)__.
