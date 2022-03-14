@@ -150,6 +150,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-archives
   - jekyll-paginate
+  - jekyll-seo-tag
 
 markdown: kramdown
 # theme: minimaless

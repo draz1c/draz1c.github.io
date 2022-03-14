@@ -41,5 +41,6 @@ layout: default
     <a href="{{site.baseurl}}/tag/{{ tag }}">
       <span class="tag">{{ tag }}{% if count != 1 %}<span class="tag-count">({{ count }})</span>{% endif %}</span></a>
   {% endfor %}
+  {% seo %}
 </div>
 {% endif %}
