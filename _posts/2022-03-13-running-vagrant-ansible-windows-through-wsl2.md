@@ -1,24 +1,40 @@
 ---
-layout: post
-tags: tutorial guide vagrant ansible wsl
+#layout: posts
+tags: 
+  - tutorial
+  - guide
+  - vagrant
+  - ansible
+  - wsl
 title: "Running Vagrant and Ansible in Windows 10 through WSL2"
-author: draz1c
-categories: running-vagrant-ansible-windows-through-wsl2
-permalink: '/:year/:month/:day/:categories/'
-published: true
+excerpt: All steps needed to setup your homelab for Vagrant+Ansible using WSL2
+header:
+  teaser: "/assets/images/windows_vagrant_ansible_wsl.png"
+# overlay_image: /assets/images/windows_vagrant_ansible_wsl.png
+# caption: "Windows 10 + Vagrant + WSL2 + Ansible"
+# author: draz1c
+# categories: '/:year/:month/:day/:categories/'
+# permalink: '/:year/:month/:day/:categories/'
+# published: true
+# last_modified_at: 2022-03-13T09:45:06-05:00
+toc: true # Table of contents
+toc_sticky: True
+#author_profile: false
 ---
 
 <center>
 
-<img src="{{ site.baseurl }}/images/windows_vagrant_ansible_wsl.png" />
-<center><small><em>Windows 10 + Vagrant + WSL2 + Ansible</em></small></center>
-</center>
-
+<img src="{{ site.baseurl }}/assets/images/windows_vagrant_ansible_wsl.png" />
+ <center><small><em>Windows 10 + Vagrant + WSL2 + Ansible</em></small></center>
+ </center>
 
 ----
-So, wether you are setting your __homelab__ up for learning purposes, or your __homeserver__ if you have the more advanced knowledge, or even on __production__ in a company, you may want to automatize the process of creating, configuring and deleting __Virtual Machines__ (_*VM*_'s) for multiple purposes.
-#### What is Vagrant?
-You may use any of the most popular virtualization software out there like `VirtualBox`, `VMware`, `Hyper-V`, `KVM`, `AWS`, `Docker`, etc... but creating Virtual Machines the manual way can be a hustle and bustle as it usually requires to download an __ISO File__ for the target OS that you are goint to install into and then wait for the installation process which can __take a while to complete__. Once you have one Virtual Machine up and working most of these software programs allo you to replicate the configuration so that you can create multiple other machines in a matter of seconds.
+
+So, wether you are setting your __homelab__ up for learning purposes, or your __homeserver__ if you have the more advanced knowledge, or even on __production__ in a company, you may want to automatize the process of creating, configuring and deleting __Virtual Machines__ (*VM*'s) for multiple purposes.
+
+## What is Vagrant?
+
+You may use any of the most popular virtualization software out there like `VirtualBox`, `VMware`, `Hyper-V`, `KVM`, `AWS`, `Docker`, etc... but creating Virtual Machines the manual way can be a hustle and bustle as it usually requires to download an __ISO File__ for the target OS that you are going to install into and then wait for the installation process which can __take a while to complete__. Once you have one Virtual Machine up and working most of these software programs allo you to replicate the configuration so that you can create multiple other machines in a matter of seconds.
 
 But what if you could have a Virtual Machine up and running with all the configurations needed already done in just a matter of seconds? And not only that, but allows you to move that virtual machine to another computer by just sending a text file. That is Vagrant, a software that allows __creation and management of portable virtual machines__.
 
@@ -26,7 +42,9 @@ So how does Vagrant work? Vagrant uses "`Provisioners`" and "`Providers`" as bui
 __Providers__ are the services that Vagrant uses to set up and create virtual environments. Vagrant comes with native support of `VirtualBox`, `Hyper-V`, and `Docker virtualization`, while `VMware` and `AWS` are supported via __plugins__.
 
 What we are covering in this post is using Vagrant and Ansible in Windows 10 using __Windows Subsystem for Linux__ in it's second version (`WSL2`). This newer version of WSL launches a full virtual machine of Linux (in the Windows Store you can choose to install Ubuntu, Debian, Kali, Suse, etc...), so since it is a full Linux OS that is running everything should work just like in a Linux partition right? Well, not quite... WSL2 directories runs on it's own network adapter usually called `vEthernet (WSL)`, so accesing resources from either side (Windows 10 to WSL2 filesystem and folders as well as from WSL2 to Windows 10 filesystem and folders) makes use of the ethernet adapter all the time, and everything goes through the __firewall__ and here is when things get complicated when you try to set things up for the first time (not anymore since I am giving all the steps needed to circumvent all the probles that may arise during installation and first use of Vagrant).
-#### Installation
+
+## Installation
+
 Now, let's get our hands dirty doing what we love the most: the terminal. For Vagrant to work with WSL2 and Windows 10 we need to install the same version of Vagrant in both Windows 10 and WSL2.\
 For The Windows installation you may go to the [__downloads page__](https://www.vagrantup.com/downloads) of Vagrant and download the binary for the OS version you are using 32-bit or 64-bit. Nowadays is more likely that you are using the 64-bit, but if you are not sure what you are using type `uname -i` in the WSL terminal and it will print what OS you are using.\
 Once it is donwloaded and installed open your WSL terminal and, assuming you are using Debian or a Debian derived OS like Ubuntu, type the following commands:
@@ -40,7 +58,7 @@ sudo apt-get update && sudo apt-get install vagrant
 >In the [__downloads page__](https://www.vagrantup.com/downloads) you may find the commads needed for `yum`, `dnf` o `brew` if you are using CentOS/RHEL, Fedora or Homebrew respectively.
 <center>
   
-<img src="{{ site.baseurl }}/images/vagrant_downloads.png" />  
+<img src="{{ site.baseurl }}/assets/images/vagrant_downloads.png" />  
 <center><small><em>Image: Other installation methods.</em></small></center>
 
 </center>
@@ -53,7 +71,7 @@ Vagrant 2.2.19
 ```
 
 Now we can install VirtualBox (if not already installed) or update it to the latest version which at the time of writing this article it is version __6.1__. You should take note of the installation directory because it will be needed later on (default is "__C:\Program Files\Oracle\VirtualBox__").
-#### Configuration
+## Configuration
 Next thing we need is to enable the access of Vagrant to the Windows 10 installation of your Provider, in our case we will use the default one (and most supported by Vagrant) which is VirtualBox. This is done by exporting a couple of variables in the WSL2 terminal.\
 The first variable `VAGRANT_WSL_ENABLE_WINDOWS_ACCESS` will enable the use of an external provider instead of using a VirtualBox installed inside WSL2 and will use therefore the one installed in the host OS.\
 The second variable will be adding the VirtualBox install folder location to the `PATH` of the WSL2 user. So in order to export these variables you could edit the file `~/.bashrc` with your favourite text editor or add them to the end of the file with these commands and then restart the shell (logout and login works):
@@ -62,7 +80,7 @@ The second variable will be adding the VirtualBox install folder location to the
 echo 'export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"' >> ~/.bashrc
 echo 'export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"' >> ~/.bashrc
 ```
->_*As I mentioned before I'm using the default install location, you may need to adjust the command with your own path to VirtualBox location.*_
+>*As I mentioned before I'm using the default install location, you may need to adjust the command with your own path to VirtualBox location.*
 
 We are not done just yet, but we are getting there to launch our first Virtual Machine and connecting through ssh to it. If you try to launch a Virtual Machine with Vagrant you will be met with errors that can look like these:
 
@@ -111,13 +129,13 @@ You will have to disable vEthernet (WSL) for the three profiles `domain`, `priva
 
 <center>
   
-  <img src="{{ site.baseurl }}/images/disable-firewall-1.png" />
+  <img src="{{ site.baseurl }}/assets/images/disable-firewall-1.png" />
   <center><small><em>Go to firewall properties</em></small></center>
   
-  <img src="{{ site.baseurl }}/images/disable-firewall-2.png" />
+  <img src="{{ site.baseurl }}/assets/images/disable-firewall-2.png" />
   <center><small><em>For each of the three profiles click on customize</em></small></center>
   
-  <img src="{{ site.baseurl }}/images/disable-firewall-3.png" />
+  <img src="{{ site.baseurl }}/assets/images/disable-firewall-3.png" />
   <center><small><em>Untick vEthernet (WSL)</em></small></center>
   
   </center>
@@ -125,7 +143,7 @@ You will have to disable vEthernet (WSL) for the three profiles `domain`, `priva
   
 You may have to follow these steps every time you reboot your computer as in my case Windows 10 seems to reset that config.
   
-#### Last steps
+## Last steps
 
 The last thing you should do fixes a problem that could happen to you when creating and running multiple VMs with ansible, if you ever come across this message:
 
@@ -144,13 +162,13 @@ Apparently it is easy to fix as pointed out __[here](https://stackoverflow.com/a
 
 <center>
   
-<img src="{{ site.baseurl }}/images/firewall-4.png" />
+<img src="{{ site.baseurl }}/assets/images/firewall-4.png" />
  <center><small><em>Checking and uncheking this option and disabling and enabling the adapter seems to fix the problem.</em></small></center> 
   </center>
   
 There are other fixes that than be tried if none of the above does the trick, you can read more about them __[here](https://github.com/geerlingguy/ansible-for-devops/issues/291)__.
 
-#### Running Vagrant with Ansible
+## Running Vagrant with Ansible
 
 Yes! You made it here! You can finally launch your first Virtual Machine. First go to __[Discover Vagrant Boxes](https://app.vagrantup.com/boxes/search)__ and choose the image that you wish. For this example I will choose `centos/7`.
 
@@ -174,7 +192,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
->Otherwise it will give an error, and we don't need the shared folder just now.
+Otherwise it will give an error, and we don't need the shared folder just now.
 
 At this point you could type `vagrant up`, Vagrant will download the image and run it automatically. Once booted you can type `vagrant ssh` to __`ssh`__ into it.
 
@@ -268,10 +286,8 @@ PLAY RECAP *********************************************************************
 default                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-#### Wrapping up
+## Wrapping up
 
 As you can see using Vagrant with WSL2 on Windows 10 is not quite as straightforward as it would be in a Linux computer or a Linux partition, but heck if it is supposed to work why not try to make it work? For me it took some good __Googling__ around trying everything that users mentioned, it was a lot of reading, but in this post I think I have summarized very well what it needs to make it work. At least with Vagrant version 2.2.19, who knows if a future update breaks everything, but so far I'm not thinking of updating it.
-
 >If it works, don't touch it
 
-{% include disqus.html %}
