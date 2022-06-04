@@ -13,7 +13,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "en-US"
 title                    : "Salvador Lavid"
 title_separator          : "-"
-subtitle                 : "Personal Blog"
+subtitle                 : #"Personal Blog"
 name                     : &name "Salvador Lavid" # &name is a YAML anchor which can be *referenced later
 description              : &description "My blog and portfolio."
 url                      : # "" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -103,8 +103,8 @@ analytics:
 # Site Author
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar           : "/assets/images/salvador-lavid.jpg"
-  bio              : "IT enthusiast"
+  avatar           : "/assets/images/8bitpix.png"
+  bio              : "***Sysadmin*** of my own house since 2004, but *professionally* since 2017. In the process of *expanding* into a ***Site Reliability Engineer*** by learning and adopting the ***DevOps*** philosophy"
   location         : "Santander, Spain"
   links:
     - label: "Website"

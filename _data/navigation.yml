@@ -24,7 +24,7 @@ main:
     url: /
   - title: "About me"
     url: /about-me/
-  - title: "Resumé"
+  - title: "Résumé"
     url: /resume/
 
 # documentation links

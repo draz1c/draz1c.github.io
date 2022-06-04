@@ -10,6 +10,7 @@ title: "Running Vagrant and Ansible in Windows 10 through WSL2"
 excerpt: All steps needed to setup your homelab for Vagrant+Ansible using WSL2
 header:
   teaser: "/assets/images/windows_vagrant_ansible_wsl.png"
+  og_image: "/assets/images/windows_vagrant_ansible_wsl.png"
 # overlay_image: /assets/images/windows_vagrant_ansible_wsl.png
 # caption: "Windows 10 + Vagrant + WSL2 + Ansible"
 # author: draz1c
@@ -291,3 +292,6 @@ default                    : ok=3    changed=0    unreachable=0    failed=0    s
 As you can see using Vagrant with WSL2 on Windows 10 is not quite as straightforward as it would be in a Linux computer or a Linux partition, but heck if it is supposed to work why not try to make it work? For me it took some good __Googling__ around trying everything that users mentioned, it was a lot of reading, but in this post I think I have summarized very well what it needs to make it work. At least with Vagrant version 2.2.19, who knows if a future update breaks everything, but so far I'm not thinking of updating it.
 >If it works, don't touch it
 
+----
+
+*Information taken from multiple sources from the internet*

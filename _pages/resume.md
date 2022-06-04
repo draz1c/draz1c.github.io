@@ -30,7 +30,8 @@ Courses and trainings
 
 -   **November 2017:** Akamai Kona Site Defender - Configuration and Maintenance
 -   **December 2017:** ITIL Foundation 2011
--   **March 2020:** 
+
+[//]: # ( -   **March 2020:** )
 
 Certifications and licenses
 ---------------------------
