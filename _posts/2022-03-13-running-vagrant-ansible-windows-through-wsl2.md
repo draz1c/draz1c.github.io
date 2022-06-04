@@ -7,7 +7,7 @@ tags:
   - ansible
   - wsl
 title: "Running Vagrant and Ansible in Windows 10 through WSL2"
-excerpt: All steps needed to setup your homelab for Vagrant+Ansible using WSL2
+excerpt: "So, wether you are setting your homelab up for learning purposes, or your homeserver if you have the more advanced knowledge, or even on production in a company, you may want to automatize the process of creating, configuring and deleting Virtual Machines (VM's) for multiple purposes."
 header:
   teaser: "/assets/images/windows_vagrant_ansible_wsl.png"
   og_image: "/assets/images/windows_vagrant_ansible_wsl.png"

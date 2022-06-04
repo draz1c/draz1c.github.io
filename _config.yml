@@ -110,6 +110,9 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://draz1c.github.io/"
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin-in"
+      url: "https://www.linkedin.com/in/salvador-lavid-ortiz-72b887123/"  
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/draz1c"
@@ -121,7 +124,7 @@ author:
       url: "mailto:b.draz1c88@gmail.com"
     #- label: "Instagram"
     #  icon: "fab fa-fw fa-instagram"
-    #  url: "https://instagram.com/mmistakes"
+    #  url: "https://instagram.com/mmistakes" 
 
 
 # Site Footer
